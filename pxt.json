@@ -1,0 +1,23 @@
+{
+    "name": "microbitwetter_datenverarbeitung",
+    "description": "",
+    "dependencies": {
+        "core": "*",
+        "radio": "*",
+        "microphone": "*",
+        "pxt-cw01": "github:xinabox/pxt-cw01#v0.3.13",
+        "IM01": "github:xinabox/pxt-im01#v1.1.3"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "blocksprj"
+}
