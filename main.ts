@@ -4,43 +4,35 @@ radio.onReceivedValue(function (name, value) {
         basic.pause(200)
         cw01.IoTMQTTSendPayload("timerunning empfangen", "system")
         basic.pause(200)
-        cw01.IoTSendValueToATT(value, name)
-        basic.pause(200)
     } else if (name == "airtemp") {
         cw01.IoTMQTTSendPayload(convertToText(value), name)
         basic.pause(200)
         cw01.IoTMQTTSendPayload("airtemp empfangen", "system")
-        cw01.IoTSendValueToATT(value, name)
         basic.pause(200)
     } else if (name == "airhum") {
         cw01.IoTMQTTSendPayload(convertToText(value), name)
         basic.pause(200)
         cw01.IoTMQTTSendPayload("airhum empfangen", "system")
-        cw01.IoTSendValueToATT(value, name)
         basic.pause(200)
     } else if (name == "airpress") {
         cw01.IoTMQTTSendPayload(convertToText(value), name)
         basic.pause(200)
         cw01.IoTMQTTSendPayload("airpress empfangen", "system")
-        cw01.IoTSendValueToATT(value, name)
         basic.pause(200)
     } else if (name == "altitude") {
         cw01.IoTMQTTSendPayload(convertToText(value), name)
         basic.pause(200)
         cw01.IoTMQTTSendPayload("altitude empfangen", "system")
-        cw01.IoTSendValueToATT(value, name)
         basic.pause(200)
     } else if (name == "rain") {
         cw01.IoTMQTTSendPayload(convertToText(value), name)
         basic.pause(200)
         cw01.IoTMQTTSendPayload("rain empfangen", "system")
-        cw01.IoTSendValueToATT(value, name)
         basic.pause(200)
     } else if (name == "windspeed") {
         cw01.IoTMQTTSendPayload(convertToText(value), name)
         basic.pause(200)
         cw01.IoTMQTTSendPayload("windspeed empfangen", "system")
-        cw01.IoTSendValueToATT(value, name)
         basic.pause(200)
     } else if (name == "winddirection") {
         if (value == 1) {
@@ -80,19 +72,16 @@ radio.onReceivedValue(function (name, value) {
             basic.pause(200)
             cw01.IoTMQTTSendPayload("winddirection Fehler", "system")
         }
-        cw01.IoTSendValueToATT(value, name)
         basic.pause(200)
     } else if (name == "soilhum") {
         cw01.IoTMQTTSendPayload(convertToText(value), name)
         basic.pause(200)
         cw01.IoTMQTTSendPayload("soilhum empfangen", "system")
-        cw01.IoTSendValueToATT(value, name)
         basic.pause(200)
     } else if (name == "soiltemp") {
         cw01.IoTMQTTSendPayload(convertToText(value), name)
         basic.pause(200)
         cw01.IoTMQTTSendPayload("soiltemp empfangen", "system")
-        cw01.IoTSendValueToATT(value, name)
     } else {
         debug = 1
     }
@@ -100,11 +89,13 @@ radio.onReceivedValue(function (name, value) {
 })
 let debug = 0
 cw01.connectToWifi("DefConNet", "taliesin999")
-cw01.IoTMQTTConnect("10.0.0.71", "mirveglius@gmail.com", "Taliesin123!")
-cw01.IoTMQTTSetClientID("1055b1005ef211eb94b585e2e57c004e")
-cw01.connectToATT("maker:4Tx5Pui9uwzrm0lqFx8yxe2cWp8ASOOZllS09U7", "NcnYeBgN1J1tVkbXyiospAeJ")
+basic.pause(200)
+cw01.IoTMQTTConnect("thingsboard.defconnet.org", "mirveglius@gmail.com", "Taliesin123!")
+basic.pause(200)
 radio.setGroup(1)
+basic.pause(200)
 cw01.IoTMQTTSendPayload(control.deviceName(), "system")
+basic.pause(200)
 cw01.IoTMQTTSendPayload(convertToText(control.deviceSerialNumber()), "system")
 debug = 1
 basic.forever(function () {
