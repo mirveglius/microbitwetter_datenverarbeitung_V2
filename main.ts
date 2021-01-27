@@ -317,8 +317,9 @@ basic.forever(function () {
                     # # # # #
                     `)
             }
+            debug = 0
         }
-        basic.pause(5000)
-        debug = 0
+        basic.pause(100000)
+        debug = 1
     }
 })
